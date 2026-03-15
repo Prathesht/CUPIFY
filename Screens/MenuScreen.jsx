@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BottomTabBar from '../Components/BottomTabBar';
 import {
   View,
   Text,
@@ -150,29 +151,8 @@ const MenuScreen = ({ navigation }) => {
 
         <View style={{ height: 90 }} />
       </ScrollView>
-
-      {/* Bottom Tab Bar */}
-      <View style={styles.tabBar}>
-        <TouchableOpacity style={styles.tabItem}>
-          <Text style={styles.tabIconActive}>🏠</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.tabItem}>
-          <Text style={styles.tabIcon}>🤍</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.tabItem} onPress={() => navigation.navigate('Cart')}>
-          <View>
-            <Text style={styles.tabIcon}>🛍️</Text>
-            {cartCount > 0 && (
-              <View style={styles.cartBadge}>
-                <Text style={styles.cartBadgeText}>{cartCount}</Text>
-              </View>
-            )}
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.tabItem}>
-          <Text style={styles.tabIcon}>🔔</Text>
-        </TouchableOpacity>
-      </View>
+       {/* ✅ Component use பண்றோம் */}
+    <BottomTabBar navigation={navigation} activeTab="Home" cartCount={cartCount} />
     </SafeAreaView>
     </SafeAreaProvider>
   );
