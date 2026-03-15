@@ -53,20 +53,6 @@ const MenuScreen = ({ navigation }) => {
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
 
-        {/* Header */}
-        <View style={styles.header}>
-          <View>
-            <Text style={styles.locationLabel}>Location</Text>
-            <TouchableOpacity style={styles.locationRow}>
-              <Text style={styles.locationText}>Bilzen, Tanjungbalai</Text>
-              <Text style={styles.locationArrow}> ›</Text>
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity style={styles.profileBtn}>
-            <Text style={styles.profileEmoji}>👤</Text>
-          </TouchableOpacity>
-        </View>
-
         {/* Search + Filter */}
         <View style={styles.searchRow}>
           <View style={styles.searchBox}>
@@ -79,9 +65,6 @@ const MenuScreen = ({ navigation }) => {
               onChangeText={setSearch}
             />
           </View>
-          <TouchableOpacity style={styles.filterBtn}>
-            <Text style={styles.filterIcon}>⚙️</Text>
-          </TouchableOpacity>
         </View>
 
         {/* Promo Banner */}
@@ -151,7 +134,7 @@ const MenuScreen = ({ navigation }) => {
 
         <View style={{ height: 90 }} />
       </ScrollView>
-       {/* ✅ Component use பண்றோம் */}
+       {/* Bottom tab bar */}
     <BottomTabBar navigation={navigation} activeTab="Home" cartCount={cartCount} />
     </SafeAreaView>
     </SafeAreaProvider>
@@ -171,15 +154,6 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingBottom: 8,
   },
-  locationLabel: { fontSize: 12, color: '#aaa' },
-  locationRow: { flexDirection: 'row', alignItems: 'center' },
-  locationText: { fontSize: 16, fontWeight: '700', color: '#1a1a1a' },
-  locationArrow: { fontSize: 18, color: '#1a1a1a' },
-  profileBtn: {
-    width: 40, height: 40, borderRadius: 20,
-    backgroundColor: '#f0f0f0', justifyContent: 'center', alignItems: 'center',
-  },
-  profileEmoji: { fontSize: 18 },
 
   // Search
   searchRow: {
@@ -196,11 +170,6 @@ const styles = StyleSheet.create({
   },
   searchIcon: { fontSize: 16, marginRight: 8 },
   searchInput: { flex: 1, fontSize: 14, color: '#333' },
-  filterBtn: {
-    width: 48, height: 48, borderRadius: 14,
-    backgroundColor: '#C47E50', justifyContent: 'center', alignItems: 'center',
-  },
-  filterIcon: { fontSize: 18 },
 
   // Promo Banner
   promoBanner: {

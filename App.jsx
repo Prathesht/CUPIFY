@@ -7,6 +7,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Welcomescreen from './Screens/Welcomescreen';
 import MenuScreen from './Screens/MenuScreen';
 import CartScreen from './Screens/CartScreen';
+import Favouritescreen from './Screens/Favouritescreen';
+import Notificationscreen from './Screens/Notificationscreen';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +24,8 @@ const App = () => {
           <Stack.Screen name="Welcome" component={Welcomescreen} />
           <Stack.Screen name="Menu" component={MenuScreen} />
           <Stack.Screen name="Cart" component={CartScreen} />
+          <Stack.Screen name="Favourite" component={Favouritescreen}/>
+          <Stack.Screen name="Notification" component={Notificationscreen}/>
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

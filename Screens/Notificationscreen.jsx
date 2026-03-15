@@ -8,34 +8,35 @@ import {
 import BottomTabBar from '../Components/BottomTabBar';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
-const CartScreen = ({ navigation }) => {
+const FavouriteScreen = ({ navigation }) => {
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.safeArea}>
 
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>My Cart 🛍️</Text>
+          <Text style={styles.headerTitle}>Notifications 🔔</Text>
         </View>
 
-        {/* Empty Cart / Maintenance */}
-        <View style={styles.emptyContainer}>
-          <Text style={styles.emptyIcon}>☕</Text>
-          <Text style={styles.emptyTitle}>Under maintenance!</Text>
-          <Text style={styles.emptySubtitle}>
-            Cart feature will be available soon.
-          </Text>
+        {/* Empty Notifications */}
+          <View style={styles.emptyContainer}>
+                  <Text style={styles.emptyIcon}>☕</Text>
+                  <Text style={styles.emptyTitle}>Under maintenance!</Text>
+                  <Text style={styles.emptySubtitle}>
+                    Notification feature will be available soon.
+                  </Text>
+        
+                  <TouchableOpacity
+                    style={styles.browseBtn}
+                    onPress={() => navigation.navigate('Menu')}
+                  >
+                    <Text style={styles.browseBtnText}>Back to Menu</Text>
+                  </TouchableOpacity>
+                </View>
 
-          <TouchableOpacity
-            style={styles.browseBtn}
-            onPress={() => navigation.navigate('Menu')}
-          >
-            <Text style={styles.browseBtnText}>Back to Menu</Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* Bottom Tab Bar */}
-        <BottomTabBar navigation={navigation} activeTab="Cart" />
+        {/* Bottom Tab */}
+        <BottomTabBar navigation={navigation} activeTab="Notifications" />
 
       </SafeAreaView>
     </SafeAreaProvider>
@@ -43,10 +44,7 @@ const CartScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
+  safeArea: { flex: 1, backgroundColor: '#fff' },
 
   header: {
     flexDirection: 'row',
@@ -105,4 +103,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CartScreen;
+export default FavouriteScreen;

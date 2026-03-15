@@ -4,9 +4,9 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 const BottomTabBar = ({ navigation, activeTab = 'Home', cartCount = 0 }) => {
   const tabs = [
     { name: 'Home', icon: '🏠', route: 'Menu' },
-    { name: 'Favourites', icon: '🤍', route: 'Favourites' },
+    { name: 'Favourites', icon: '🤍', route: 'Favourite' },
     { name: 'Cart', icon: '🛍️', route: 'Cart' },
-    { name: 'Notifications', icon: '🔔', route: 'Notifications' },
+    { name: 'Notifications', icon: '🔔', route: 'Notification' },
   ];
 
   return (
@@ -38,14 +38,15 @@ const BottomTabBar = ({ navigation, activeTab = 'Home', cartCount = 0 }) => {
 
 const styles = StyleSheet.create({
   tabBar: {
-    height: 70,
+    height: 60,
     backgroundColor: '#fff',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
     borderTopWidth: 1,
     borderTopColor: '#f0f0f0',
-    paddingBottom: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
   },
   tabItem: { alignItems: 'center', justifyContent: 'center', flex: 1 },
   tabIcon: { fontSize: 22, textAlign: 'center', opacity: 0.4 },
